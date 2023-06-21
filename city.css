@@ -1,0 +1,78 @@
+.overall{
+    background: linear-gradient(45deg,rgb(25, 25, 25),deeppink);
+    font-family: sans-serif;
+    
+}
+.bg-success{
+    background: linear-gradient(45deg,black,rgb(93, 205, 209));
+}
+#map{
+    width: 100%;
+    position:absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgb(254, 252, 251) ;
+}
+.display{
+    text-align: center;
+}
+
+.span{
+    font-size:22px;
+}
+.dist{
+    background:white;
+    width: 100%;
+    height:400px;
+    position: relative;
+}
+.carousel{
+    width: 100%;
+}
+img{
+    height: 250px;
+}
+#parent{
+    position: relative;
+}
+.small{
+    background:white;
+    width: 30%;
+    height:40%;
+    position: absolute;
+    bottom: 0px;
+    right: 545px;
+    left: 10px;
+}
+.link{
+    align-items: right;
+    right: 0;
+}
+.overgreen{
+    background: linear-gradient(45deg,black,rgb(91, 192, 144));
+    box-shadow: 0 5px 10px black;
+    font-family: sans-serif;
+  }
+  .overblue{
+    background: linear-gradient(45deg,black,rgb(101, 173, 193));
+    box-shadow: 0 5px 10px black;
+    font-family: sans-serif;
+  }
+  .overgold{
+    background: linear-gradient(45deg,black,rgb(247, 194, 81));
+    box-shadow: 0 5px 10px black;
+    font-family: sans-serif;
+  }
+  .weatherwidget-io{
+    top: 20px;
+  }
+  .wayanad{
+    background: linear-gradient(45deg,black,rgb(66, 164, 118));
+  }
+  .shimla{
+    background: linear-gradient(45deg,black,rgb(230, 176, 61));
+  }
+  .darjeeling{
+    background: linear-gradient(45deg,black,rgb(81, 172, 197));
+  }

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darjeeling-West Bengal</title>
+    <link rel="icon" href="./images/map-icon.jpg">
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+rel="stylesheet"/>
+<link rel="stylesheet" href="./city.css">
+<script src="./shp/state.js"></script>
+  <script src="./shp/West Bengal/west.js"></script>
+  <script src="./shp/West Bengal/Darjeeling/DarjelingShp.js"></script>
+  <script src="./shp/West Bengal/Darjeeling/roadD.js"></script>
+  <script src="./shp/West Bengal/Darjeeling/waterD.js"></script>
+  <link
+      rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="script/locationD.js"></script>
+</head>
+<body>
+    <div class="container-fluid  overblue">
+        <div class="row text-white">
+            <div class="col-md-10">
+                <h1 class="display-2 text-capitalize p-1">DARJEELING<span class="span"> [ 27.03°N , 88.16°E ]</span></h1>
+            </div>
+            <div class=" col-md-2 link">
+              
+              <h3>Other cities:</h3>
+              <a class="btn btn-primary  wayanad" href="./Wayanad.html" role="button">Wayanad</a>
+              <a class="btn btn-success shimla" href="./Shimla.html" role="button">Shimla</a>
+            </div> 
+            <div class="row">
+                <div class="col-md-5">              
+                  <div class="col">
+                            <h2>About:</h2>
+                            <p class="">
+                                Darjeeling is the beautiful <b>mountain region</b> in the north of West Bengal. 
+                                Total Area <b>3,149 Sq Km</b>. Darjeeling weather offers a relatively moderate climate.
+                                Summer starts in May and lasts until Mid-June. The average 
+                                temperature during summer varies between <b>11°C to 19°C.</b></p>
+                        </div>
+                          <div class="row">
+                            <div class="col">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="./images/Darjeeling/Dhirdham-Temple-Darjeeling.jpg" alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Excite To Visit</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">The gorgeous Nepali Style Hindu
+                                            Temple of Dhirdham</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="./images/Darjeeling/darjeeling.jpg" alt="Second slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Relax the Soul</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">The Darjeeling Himalayan Railway, is a 610 mm (2 ft)
+                                             gauge railway</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="./images/Darjeeling/Gombu-Rock-Darjeeling.jpg" alt="Third slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Excite To Visit</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">Tenzing Rock is one of the most beautiful gigantic 
+                                            natural rocks in Darjeeling.</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item active">
+                                        <img class="d-block w-100" src="./images/Darjeeling/Happy-Valley-Tea-Estate-Darjeeling.jpg" alt="Third slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Enjoy The Nature</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">It is time to enjoy the sprawling tea estate that is spread
+                                            across 440 acres.</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="./images/Darjeeling/Shrubbery-Nightingale-Park-Darjeeling.jpg" alt="Third slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Relax Your Soul</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">The beautiful Shrubbery Nightingale Park is an amazing 
+                                            place to visit</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="./images/Darjeeling/Tiger-Hill-Darjeeling.jpg" alt="Third slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Enjoy The Nature</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">Tiger Hill, which is the highest point in the region.</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="./images/Darjeeling/Peace-Pagoda-Darjeeling.jpg" alt="Third slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5 class="display-4 text-left animated delay-1s">Excite To Visit</h5>
+                                          <p class="lead text-bold animated jackInTheBox delay-2s">The Japanese Temple
+                                             was inaugurated in the year 1972.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <a class="weatherwidget-io" href="https://forecast7.com/en/27d0488d26/darjeeling/" data-label_1="DARJEELING" data-label_2="WEATHER" data-font="Noto Serif" data-days="3" data-theme="marine" >DARJEELING WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+                                </div>
+                              </div>
+                              <br><br>
+                              <div class="row">
+                                <div class="col-md-2">
+                                    <h2 class="text-center">Maps:</h2></div>
+                                    <div class="col-md-10">
+                            <div class="row-md-4 text-center">
+                              <a class="btn btn-primary btn-sm" href="./locationD.html" role="button" target="census" id="pop">Location Map</a>
+                              <a class="btn btn-danger btn-sm" href="./images/Darjeeling/pop.html" role="button"target="census" id="pop">Population Density Map</a>
+                              <a class="btn btn-success btn-sm" href="./images/Darjeeling/lit.html" role="button"target="census" id="pop">Literacy Map</a>
+                              <div class="row-md-4 text-center">
+                              <a class="btn btn-info btn-sm" href="./images/Darjeeling/illit.html" role="button" target="census" id="pop">Illiteracy Map</a>
+                              <a class="btn btn-warning btn-sm" href="./images/Darjeeling/workpep.html" role="button" target="census" id="pop">working Population Map</a>
+                            </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div></div>
+                    <div class="col-md-7">
+                        <iframe name="census" scrolling="no" height="100%" width="100%" src="./locationD.html">
+                                </div></div>
+                        </div>
+                    </div></iframe>
+                </div>
+        </div>
+    </div>
+                
+    <script>
+        $('.carousel').carousel({
+            interval: 1000,
+            pause:'hover'
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+</body>
+</html>
+
+    

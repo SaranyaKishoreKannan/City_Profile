@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>location map</title>
+  <script src="./shp/state.js"></script>
+  <script src="./shp/Himachal Pradesh/Himachal.js"></script>
+  <script src="./shp/Himachal Pradesh/Shimla/Shimla.js"></script>
+  <link
+      rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="./css/iframe.css">
+</head>
+<body>
+  <div id="map">
+    <script>
+    var map = L.map("map");
+    map.setView([31.580010, 77.981827], 6);
+    var Shimla = L.marker([31.1033,77.1722]).addTo(map);
+    Shimla.bindPopup("<b>Shimla</b><br>Himachal Pradesh").openPopup();
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	                    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                        }).addTo(map);
+    var himachal = L.geoJSON(himachal,{
+          style:{
+            fillColor: "yellow",
+          opacity:'100cm',
+          color: "white",
+          weight: 2,
+          opacity: 1,
+          color:'black',
+          dashArray: '3',
+          fillOpacity: 0.7
+      }
+      }).addTo(map);
+    var state = L.geoJSON(state,{
+          style:{
+            fillColor: "red",
+          color: "black"
+      }
+      }).addTo(map);
+    var shimla = L.geoJSON(shimla,{
+          style:{
+            fillColor: "purple",
+          opacity:'100cm',
+          color: "white",
+          weight: 2,
+          opacity: 1,
+          color:'white',
+          dashArray: '3',
+          fillOpacity: 0.7
+      }
+      }).addTo(map);
+
+    L.control.scale({position: 'bottomleft'}).addTo(map);
+    var mapId = document.getElementById('map')
+    function fullScreenView(){
+     mapId.requestFullscreen();
+    }
+</script>
+  
+</div>
+</div>
+
+</body>
+</html>

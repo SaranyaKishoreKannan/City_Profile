@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./city.css">
+<script src="./shp/state.js"></script>
+  <script src="./shp/West Bengal/west.js"></script>
+  <script src="./shp/West Bengal/Darjeeling/DarjelingShp.js"></script>
+  <script src="./shp/West Bengal/Darjeeling/roadD.js"></script>
+  <script src="./shp/West Bengal/Darjeeling/waterD.js"></script>
+  <link
+      rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</head>
+<body>
+    <div class="big" id="map">
+        <script>
+            var map = L.map("map");
+            map.setView([26.8300,88.1600], 9);
+            
+            
+            var Esri_NatGeoWorldMap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+}).addTo(map);
+        var west = L.geoJSON(west,{
+                  style:{
+                  fillColor: "yellow",
+                  color: "black"
+              }
+              }).addTo(map);
+            var darjeeling = L.geoJSON(darjeeling,{
+                  style:{
+                  fillColor: "blue",
+                  opacity:'100cm',
+                  color: "white",
+                  weight: 2,
+                  opacity: 1,
+                  color:'white',
+                  dashArray: '3',
+                  fillOpacity: 0.7
+              }
+              }).addTo(map);
+              var road = L.geoJSON(road,{
+                  style:{
+                    dashArray: '3',
+                  color: "black"
+              }
+              }).addTo(map);
+              var water = L.geoJSON(water,{
+                  style:{
+                    dashArray: '3',
+                  color: "blue"
+              }
+              }).addTo(map);
+              var overlayMaps = {
+                Roadways: road,
+                Waterbodies: water
+              };
+              L.control.layers(null, overlayMaps).addTo(map);
+              
+            L.control.scale({position: 'bottomright'}).addTo(map);
+            </script>
+            <div class="small" id="imap">
+                <script>
+                    var imap = L.map("imap");
+                    imap.setView([20.780010, 86.981827], 3);
+                    var Darjeeling = L.circleMarker([27.0300,88.1600]).addTo(imap);
+                    Darjeeling.bindPopup("<b>Darjeeling</b>").openPopup();
+                    var Esri_WorldImagery = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+}).addTo(map);
+                    
+                    var state = L.geoJSON(state,{
+                          style:{
+                            fillColor: "red",
+                          color: "black"
+                      }
+                      }).addTo(imap);
+                      var westSmall = L.geoJSON(west,{
+                          style:{
+                          fillColor: "pink",
+                          opacity:'100cm',
+                          color: "white",
+                          weight: 2,
+                          opacity: 1,
+                          color:'black',
+                          dashArray: '3',
+                          fillOpacity: 0.7
+                      }
+                      }).addTo(imap);
+                    var darjeelings = L.geoJSON(darjeeling,{
+                          style:{
+                            fillColor: "purple",
+                          opacity:'100cm',
+                          color: "white",
+                          weight: 2,
+                          opacity: 1,
+                          color:'white',
+                          dashArray: '3',
+                          fillOpacity: 0.7
+                      }
+                      }).addTo(imap);
+                
+                    L.control.scale({position: 'bottomleft'}).addTo(imap);
+                </script>
+            </div>
+</body>
+</html>

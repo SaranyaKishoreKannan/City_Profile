@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Profile</title>
+    <link rel="icon" href="./images/map-icon.jpg">
+<!--Leaflet CSS file-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<!--Leaflet JavaScript file-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<!--css file-->
+    <link rel="stylesheet" href="./css/indiaCityProfile.css">
+<!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="./shp/state.js"></script>
+    <link rel="stylesheet" href="./bootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/mdb.dark.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/mdb.rtl.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/mdb.dark.rtl.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container-fluid  overall">
+        <div class="row text-white">
+            <div class="col-md-5">
+                <h1 class="display-1 text-capitalize p-1">India City profile</h1>
+            </div>
+            <div class="col-md-7">
+                <br><br>
+                <h3 class=""> You can navigate the Indian Cities using the given Marker </h3>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-5">
+                    <section class="container-fluid fact">
+                    <h2 class="text-center">Facts - India:</h2>
+                    <div class="card overall">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Seventh Largest Country by Area</p>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Second most populous country</p>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>3.28 million square km Area</p>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>2.4% of the Area on the Globe</p>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Land Boundary 15,200km</p>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Coastal Boundary 7,516 km</p>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>300 cities have population more than 3 million</p>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>4000 Cities and Towns in India</p>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Mumbai is the most populated city</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="text-center">Contact Us</h2>
+                        <h3 class="text-center">Find Us at office</h3>
+                    <div class="col-md-5">
+                        
+                        <p class="card overall text-center">Digital hub,<br>4th Floor,<br>CRR Building,<br>L&T Construction,<br>Manapakkam,Chennai.</p>
+                    </div>
+                    <div class="col-md-7">
+                        <br>
+                        <img src="./images/logo.png">
+                    </div>
+                </div>
+            </div>
+                <div class="col-md-6">
+                <div class="col" id="map">
+                    <script>
+                    var map = L.map("map");
+                    map.setView([23.259933, 77.412613], 5);
+                    var Shimla = L.marker([31.104605,77.173424],{
+                        title:'Shimla'
+                    }).addTo(map);
+                    
+                    var Wayanad = L.marker([11.71522, 76.12690],{
+                        title:'Wayanad'
+                    }).addTo(map);
+                    
+                    var Darjeeling = L.marker([27.0300,88.1600],{
+                        title:'Darjeeling',
+                    }).addTo(map);
+                    
+                    var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 17,
+                    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                    }).addTo(map);
+                    var state =L.geoJSON(state,{
+                    style:{
+                    fillColor: "pink",
+                    weight: 2,
+                    weight: 2,
+                    opacity: 1,
+                    color: 'black',
+                    dashArray: '3',
+                    fillOpacity: 0.7
+                    }
+                    }).addTo(map);
+            
+                    Wayanad.on('click',function(e){
+                   window.location.href="./Wayanad.html"
+                    });
+                    Shimla.on('click',function(e){
+                   window.location.href="./Shimla.html"
+                    });
+                    Darjeeling.on('click',function(e){
+                   window.location.href="./Darjeeling.html"
+                    });
+      
+                    L.control.scale({position: 'bottomleft'}).addTo(map);
+                    var mapId = document.getElementById('map')
+                    function fullScreenView(){
+                     mapId.requestFullscreen();
+                    }
+                   
+                </script></div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
