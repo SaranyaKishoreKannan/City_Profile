@@ -1,0 +1,23 @@
+#map{
+    width: 57%;
+    position:absolute;
+    height: 90%;
+    border: 1px solid rgb(254, 252, 251) ;
+    top: 100px;
+  }
+.overall{
+  background: linear-gradient(45deg,black,deeppink);
+  box-shadow: 0 5px 10px black;
+  font-family: sans-serif;
+}
+.contact{
+  background: linear-gradient(0deg,black,deeppink);
+}
+
+.box{
+  background: linear-gradient(45deg,black,deeppink);
+}
+img{
+  right: 0;
+  bottom: 0;
+}
